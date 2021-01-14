@@ -1,4 +1,4 @@
-export const getStatusPicture = () => {
+export const getCatPicture = () => {
   return fetch('https://api.thecatapi.com/v1/images/search')
     .then((response) => {
       if (response.ok) {
