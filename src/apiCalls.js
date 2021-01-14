@@ -1,5 +1,5 @@
-export const getStatusPicture = (code) => {
-  return fetch(`https://http.cat/${code}.jpg`)
+export const getStatusPicture = () => {
+  return fetch('https://api.thecatapi.com/v1/images/search')
     .then((response) => {
       if (response.ok) {
         return response.json();
