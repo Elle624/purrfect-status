@@ -1,0 +1,100 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.display-picture-form-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.nav-section {
+  display: flex;
+  height: 6rem;
+  background-color: $main-blue;
+  align-items: center;
+  margin-bottom: 1rem;
+  justify-content: space-between;
+  padding: 0 5rem;
+  button {
+    @include nav-button;
+    &:hover {
+      @include button-hover-effect;
+    }
+  }
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+.picture-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  button {
+    @include nav-button;
+    @include smaller-button;
+    &:hover {
+      @include button-hover-effect;
+    }
+  }
+}
+
+.cat-picture-wrapper {
+  width: 50rem;
+  height: 30rem; 
+  margin-bottom: 1rem;
+  border-radius: 5%;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ .status-inputs {
+   width: 30rem;
+   margin-bottom: 1rem;
+ }
+ button {
+   @include smaller-button;
+ }
+}
+
+label {
+  margin-right: 0.5rem;
+  font-size: 1.5rem;
+}
+
+input,
+.status-input {
+  transition: all 0.15s ease;
+  @include input-settings;
+  &:hover {
+    @include input-hover-effect;
+  }
+  &:focus {
+    @include input-focus-effect;
+  }
+}
+
+.input-wrapper {
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+// .explaination-input-wrapper {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content:flex-start;
+//   align-items: flex-start
+// }
+
+.status-explaination {
+  width: 100%;
+  height: 5rem;
+}

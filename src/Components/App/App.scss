@@ -1,4 +1,13 @@
-.App {
+@import "../../styles/variables";
+
+.main-body {
+  height: 100vh;
+  width: 100%;
+  background-color: $main-peach;
+}
+
+
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +44,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
