@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { getCatPicture } from '../../apiCalls';
 import Form from '../Form';
 import './Home.scss'
+import { IoPawSharp } from 'react-icons/io5';
 
 const Home = () => {
   const [pictureUrl, setPictureUrl] = useState('');
@@ -34,11 +35,16 @@ const Home = () => {
               backgroundImage: `url(${pictureUrl})`,
               backgroundPosition: "center",
               backgroundSize: "cover",
-              backgroundRepeat: "no-reapeat"
+              backgroundRepeat: "no-repeat"
             }}>
+            <div className="icon-wrapper">
+              {userInput && <IoPawSharp className="icon"/>}
+            </div>
+            <figure className="dispay-inputs-wrapper">
+              <p>{userInput && userInput.statusCode}</p>
+              <p>{userInput && userInput.explaination}</p>
+            </figure>
           </div>
-          <p>{userInput && userInput.statusCode}</p>
-          <p>{userInput && userInput.explaination}</p>
           <div>
             <button onClick={generateRandomCatPicture}>Not Purrfect</button>
           </div>
