@@ -5,9 +5,17 @@ import './Home.scss'
 
 const Home = () => {
   const [pictureUrl, setPictureUrl] = useState('');
+  const [userInput, setUserInput] = useState(null);
 
   const generateRandomCatPicture = () => {
-    getCatPicture().then(data =>setPictureUrl(data[0].url))
+    getCatPicture().then(data =>{
+      setPictureUrl(data[0].url);
+      setUserInput(null);
+    })
+  }
+
+  const getUserInput = newInput => {
+    setUserInput(newInput);
   }
 
   useEffect(() => generateRandomCatPicture(), [])
@@ -29,11 +37,13 @@ const Home = () => {
               backgroundRepeat: "no-reapeat"
             }}>
           </div>
+          <p>{userInput && userInput.statusCode}</p>
+          <p>{userInput && userInput.explaination}</p>
           <div>
             <button onClick={generateRandomCatPicture}>Not Purrfect</button>
           </div>
         </section>
-        <Form />
+        <Form getUserInput={getUserInput}/>
       </section>
     </section>
   )

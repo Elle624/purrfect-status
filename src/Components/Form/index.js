@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import './Form.scss';
 
-const Form = () => {
+const Form = ({getUserInput}) => {
   const [statusCode, setStatusCode] = useState('');
   const [explaination, setExplaination] = useState('');
 
   const handleClick = event => {
     event.preventDefault();
-    
+    const newInput = {statusCode, explaination}
+    getUserInput(newInput);
     resetInputs();
   }
 
