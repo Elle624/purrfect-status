@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { getCatPicture } from '../../apiCalls';
+import Form from '../Form';
 import './Home.scss'
 
 const Home = () => {
-  const [statusCode, setStatusCode] = useState('');
-  const [explaination, setExplaination] = useState('');
+  // const [statusCode, setStatusCode] = useState('');
+  // const [explaination, setExplaination] = useState('');
   const [pictureUrl, setPictureUrl] = useState('');
 
   const generateRandomCatPicture = () => {
@@ -29,13 +30,13 @@ const Home = () => {
               backgroundSize: "cover",
               backgroundRepeat: "no-reapeat"
             }}>
-              <p>{statusCode}</p>
           </div>
           <div>
             <button onClick={generateRandomCatPicture}>Not Purrfect</button>
           </div>
         </section>
-        <form className="form-section">
+        <Form />
+        {/* <form className="form-section">
           <div className="input-wrapper">
             <label htmlFor="status-code-input">Status Code</label>
             <input  
@@ -65,7 +66,7 @@ const Home = () => {
           <div>
             <button>Purrfect!</button>
           </div>
-        </form>
+        </form> */}
       </section>
     </section>
   )
