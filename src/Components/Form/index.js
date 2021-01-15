@@ -5,6 +5,17 @@ const Form = () => {
   const [statusCode, setStatusCode] = useState('');
   const [explaination, setExplaination] = useState('');
 
+  const handleClick = event => {
+    event.preventDefault();
+    
+    resetInputs();
+  }
+
+  const resetInputs = () => {
+    setStatusCode('');
+    setExplaination('');
+  }
+
   return (
     <form className="form-section">
     <div className="input-wrapper">
@@ -34,7 +45,7 @@ const Form = () => {
       </textarea>
     </div>
     <div>
-      <button>Purrfect!</button>
+      <button onClick={handleClick}>Purrfect!</button>
     </div>
   </form>
   )
