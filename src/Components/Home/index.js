@@ -7,6 +7,7 @@ import { IoPawSharp } from 'react-icons/io5';
 const Home = () => {
   const [pictureUrl, setPictureUrl] = useState('');
   const [userInput, setUserInput] = useState(null);
+  const [isFavorite, setIsFavorite] = useState(false);
 
   const generateRandomCatPicture = () => {
     getCatPicture().then(data =>{
@@ -38,7 +39,11 @@ const Home = () => {
               backgroundRepeat: "no-repeat"
             }}>
             <div className="icon-wrapper">
-              {userInput && <IoPawSharp className="icon"/>}
+              {userInput && <IoPawSharp 
+                className="icon" 
+                onClick={() => setIsFavorite(prevStatus => !prevStatus)} 
+                style={{color: isFavorite ? '#177fcc' : 'white' }}
+              />}
             </div>
             <figure className="dispay-inputs-wrapper">
               <p>{userInput && userInput.statusCode}</p>
