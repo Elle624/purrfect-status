@@ -1,14 +1,7 @@
-import React, { useState } from 'react';
-import Picture from '../Picture';
-import Form from '../Form';
+import React from 'react';
 import './Home.scss'
 
-const Home = () => {
-  const [userInput, setUserInput] = useState(null);
-
-  const getUserInput = newInput => {
-    setUserInput(newInput);
-  }
+const Home = ({ children }) => {
   
   return (
     <section className="home-page">
@@ -17,8 +10,7 @@ const Home = () => {
         <button>Status Pawtrait</button>
       </nav>
       <section className="display-picture-form-section">
-        <Picture setUserInput={setUserInput} userInput={userInput}/>
-        <Form getUserInput={getUserInput}/>
+        {children}
       </section>
     </section>
   )
