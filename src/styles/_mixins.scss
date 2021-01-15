@@ -1,5 +1,23 @@
 @import "variables";
 
+@mixin nav-button {
+  border-radius: $round-corner;
+  font-size: 2em;
+  width: 15rem;
+  height: 4rem;
+  outline: none;
+}
+
+@mixin smaller-button {
+  font-size: 1.5rem;
+  width: 12rem;
+  height: 2rem;
+}
+
+@mixin button-hover-effect {
+  cursor: pointer;
+}
+
 @mixin input-settings {
   border-radius: 5%;
   background-color: $main-grey;
