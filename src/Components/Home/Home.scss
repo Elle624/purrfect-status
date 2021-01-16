@@ -9,22 +9,6 @@
   flex-wrap: wrap;
 }
 
-.nav-section {
-  display: flex;
-  height: 6rem;
-  background-color: $main-blue;
-  align-items: center;
-  margin-bottom: 1rem;
-  justify-content: space-between;
-  padding: 0 5rem;
-  button {
-    @include nav-button;
-    &:hover {
-      @include button-hover-effect;
-    }
-  }
-}
-
 h1 {
   font-size: 3rem;
 }
