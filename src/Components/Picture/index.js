@@ -8,7 +8,7 @@ const Picture = ({ setUserInput, userInput }) => {
   const [error, setError] = useState('');
 
   const generateRandomCatPicture = () => {
-    getCatPicture().then(data =>{
+    getCatPicture().then(data => {
       setPictureUrl(data[0].url);
       setUserInput(null);
     })
@@ -30,7 +30,8 @@ const Picture = ({ setUserInput, userInput }) => {
       {!pictureUrl && !error && <p>Loading...</p>}
       {error && <p>{error}</p>}
       <div 
-        className="cat-picture-wrapper" 
+        className="cat-picture-wrapper"
+        data-testid="backgeound-cat-image" 
         style={{
           backgroundImage: `url(${pictureUrl})`,
           backgroundPosition: "center",
