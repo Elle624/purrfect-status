@@ -2,7 +2,7 @@ import React from "react";
 
 const Pawtraits = ({ savedPawtraits }) => {
   const pawtraits = savedPawtraits.map(pawtrait => (
-    <section className="picture-section" key={pawtrait .id}>
+    <section className="picture-section" key={pawtrait.id}>
       <div 
         className="cat-picture-wrapper" 
         style={{
