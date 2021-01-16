@@ -11,6 +11,7 @@ import './App.scss';
 function App() {
   const [userInput, setUserInput] = useState(null);
   const [savedPawtraits, setSavedPawtraits] = useState([]);
+  const [viewFavorire, setViewFavorite] = useState(false);
 
   const getUserInput = newInput => {
     setUserInput(newInput);
@@ -34,10 +35,15 @@ function App() {
     <main className="main-body">
       <nav className="nav-section">
         <h1>Purrfect Status</h1>
-        <Link to='/saved-pawtraits'>
-          <button>Saved Pawtraits</button>
+        <Link to={viewFavorire ? '/' : '/saved-pawtraits'}>
+          <button 
+            onClick={() => setViewFavorite(prevStatus => !prevStatus)}
+          >
+            {viewFavorire ? 'Return Home' : 'Saved Pawtraits'}
+          </button>
         </Link>
       </nav>
+      
       <Route 
         exact path="/"
         render={() => 
@@ -49,7 +55,6 @@ function App() {
             <Form getUserInput={getUserInput}/>
           </Home>
         }
-        // component={Home}
       />
 
       <Route 
