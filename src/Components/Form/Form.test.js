@@ -7,15 +7,15 @@ import Form from '../Form';
 describe('Form Component', () => {
   beforeEach(() => {
     render(<Form getUserInput={jest.fn()} />, { wrapper: MemoryRouter });
-  })
-  
+  });
+
   it('should render correctly', () => {
     expect(screen.getByText('Status Code')).toBeInTheDocument();
     expect(screen.getByRole('spinbutton')).toBeInTheDocument();
     expect(screen.getByText('What does it represents?')).toBeInTheDocument();
     expect(screen.getByRole('textbox')).toBeInTheDocument();
     expect(screen.getByRole('button')).toHaveTextContent('Purrfect!');
-  })
+  });
 
   it('should reflect user input in both inputs', () => {
     const statusCodeInput = screen.getByRole('spinbutton');
@@ -25,5 +25,5 @@ describe('Form Component', () => {
     const statusExplainationInput = screen.getByRole('textbox');
     userEvent.type(statusExplainationInput, 'Accepted');
     expect(statusExplainationInput).toHaveDisplayValue('Accepted');
-  })
-})
+  });
+});

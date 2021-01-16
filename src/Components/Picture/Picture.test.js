@@ -10,32 +10,38 @@ jest.mock('../../apiCalls');
 describe('Picture Component', () => {
   beforeEach(() => {
     getCatPicture.mockResolvedValueOnce(_mockPicture1);
-  })
-  
-  it('should render loading before fetched image come back', async() => {
-    render(<Picture setUserInput={jest.fn()} userInput={_mockUserInput}/>, { wrapper: MemoryRouter });
+  });
 
-    await waitFor(() => expect(screen.getByText('Loading...')).toBeInTheDocument());
-  })
+  it('should render loading before fetched image come back', async () => {
+    render(<Picture setUserInput={jest.fn()} userInput={_mockUserInput} />, {
+      wrapper: MemoryRouter
+    });
 
-  it('should render correctly after fetched image comes back, and render different image after clicking button', async() => {
-    getCatPicture.mockResolvedValue(_mockPicture2);
-    render(<Picture setUserInput={jest.fn()} userInput={_mockUserInput}/>, { wrapper: MemoryRouter });
-
-    await waitFor(() => 
-    expect(screen.getByTestId('backgeound-cat-image'))
-    .toHaveStyle("background-image: url('https://cdn2.thecatapi.com/images/weo7Mo87q.jpg')")
+    await waitFor(() =>
+      expect(screen.getByText('Loading...')).toBeInTheDocument()
     );
-    
+  });
+
+  it('should render correctly after fetched image comes back, and render different image after clicking button', async () => {
+    getCatPicture.mockResolvedValue(_mockPicture2);
+    render(<Picture setUserInput={jest.fn()} userInput={_mockUserInput} />, {
+      wrapper: MemoryRouter
+    });
+
+    await waitFor(() =>
+      expect(screen.getByTestId('backgeound-cat-image')).toHaveStyle(
+        "background-image: url('https://cdn2.thecatapi.com/images/weo7Mo87q.jpg')"
+      )
+    );
+
     const generatePictureButton = screen.getByRole('button');
     expect(generatePictureButton).toBeInTheDocument();
     userEvent.click(generatePictureButton);
 
-    await waitFor(() => 
-      expect(screen.getByTestId('backgeound-cat-image'))
-        .toHaveStyle("background-image: url('https://cdn2.thecatapi.com/images/a9l.jpg')")
+    await waitFor(() =>
+      expect(screen.getByTestId('backgeound-cat-image')).toHaveStyle(
+        "background-image: url('https://cdn2.thecatapi.com/images/a9l.jpg')"
+      )
     );
-  })
-
-  
-})
+  });
+});
