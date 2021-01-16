@@ -24,7 +24,6 @@ const Picture = ({ setUserInput, userInput }) => {
   useEffect(() => generateRandomCatPicture(), [])
     
   return (
-    
     <section className="picture-section">
       <div 
         className="cat-picture-wrapper" 
