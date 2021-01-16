@@ -5,12 +5,14 @@ import { IoPawSharp } from 'react-icons/io5';
 
 const Picture = ({ setUserInput, userInput }) => {
   const [pictureUrl, setPictureUrl] = useState('');
+  const [error, setError] = useState('');
 
   const generateRandomCatPicture = () => {
     getCatPicture().then(data =>{
       setPictureUrl(data[0].url);
       setUserInput(null);
     })
+    .catch(err => setError(err.message))
   }
 
   const saveFavoriteCatPicture = () => {
@@ -25,6 +27,8 @@ const Picture = ({ setUserInput, userInput }) => {
     
   return (
     <section className="picture-section">
+      {!pictureUrl && !error && <p>Loading...</p>}
+      {error && <p>{error}</p>}
       <div 
         className="cat-picture-wrapper" 
         style={{
