@@ -13,6 +13,9 @@
  }
  button {
    @include smaller-button;
+   &:hover {
+    @include button-hover-effect;
+  }
  }
 }
 
