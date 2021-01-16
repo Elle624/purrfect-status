@@ -7,7 +7,7 @@ const Form = ({getUserInput}) => {
 
   const handleClick = event => {
     event.preventDefault();
-    const newInput = {statusCode, explaination}
+    const newInput = {statusCode, explaination, isFavorite: false, id: Date.now()}
     getUserInput(newInput);
     resetInputs();
   }
