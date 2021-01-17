@@ -18,7 +18,7 @@
   button {
     @include nav-button;
     &:hover {
-      @include button-hover-effect;
+      @include nav-button-hover-effect;
     }
   }
 }

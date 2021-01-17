@@ -1,5 +1,5 @@
-@import "../../styles/variables";
-@import "../../styles/mixins";
+@import '../../styles/variables';
+@import '../../styles/mixins';
 
 .form-section {
   display: flex;
@@ -7,16 +7,16 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 2rem;
- .status-inputs {
-   width: 30rem;
-   margin-bottom: 1rem;
- }
- button {
-   @include smaller-button;
-   &:hover {
-    @include button-hover-effect;
+  .status-inputs {
+    width: 30rem;
+    margin-bottom: 1rem;
   }
- }
+  button {
+    @include smaller-button;
+    &:hover {
+      @include smaller-button-hover-effect;
+    }
+  }
 }
 
 label {
