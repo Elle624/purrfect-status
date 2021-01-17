@@ -14,12 +14,44 @@
     -webkit-text-stroke: 0.5px rgb(248, 235, 225);
     font-size: 3rem;
     font-family: 'Permanent Marker', cursive;
+    animation: stretch 1.5s ease-out 0s alternate none running;
+    //animation: stretch 1.5s ease-out 0s alternate infinite none running;
   }
   button {
     @include nav-button;
     &:hover {
       @include nav-button-hover-effect;
     }
+  }
+}
+
+@keyframes stretch {
+  0% {
+    transform: scale(0.1);
+    color: $main-blue;
+  }
+
+  100% {
+    transform: scale(1);
+    color: $main-white;
+  }
+}
+
+@keyframes swing {
+  20% {
+    transform: rotate(15deg);
+  }
+  40% {
+    transform: rotate(-10deg);
+  }
+  60% {
+    transform: rotate(5deg);
+  }
+  80% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
   }
 }
 
@@ -38,12 +70,6 @@
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -57,6 +83,12 @@
 
 .App-link {
   color: #61dafb;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
 }
 
 @keyframes App-logo-spin {
