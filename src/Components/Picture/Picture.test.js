@@ -39,7 +39,7 @@ describe('Picture Component', () => {
     userEvent.click(generatePictureButton);
 
     await waitFor(() =>
-      expect(screen.getByTestId('backgeound-cat-image')).toHaveStyle(
+      expect(screen.getByTestId('background-cat-image')).toHaveStyle(
         "background-image: url('https://cdn2.thecatapi.com/images/a9l.jpg')"
       )
     );
