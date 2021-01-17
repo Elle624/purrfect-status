@@ -24,3 +24,20 @@ export const _mockUserInput = {
   isFavorite: false,
   id: 123456
 };
+
+export const _mockSavedPawtraits = [
+  {
+    url: 'https://cdn2.thecatapi.com/images/a9l.jpg',
+    statusCode: '200',
+    explaination: 'Okay',
+    isFavorite: true,
+    id: 123456
+  },
+  {
+    url: 'https://cdn2.thecatapi.com/images/weo7Mo87q.jpg',
+    statusCode: '300',
+    explaination: 'Multiple Choices',
+    isFavorite: true,
+    id: 654321
+  }
+];
