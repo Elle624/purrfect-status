@@ -5,7 +5,7 @@ export const getCatPicture = () => {
         return response.json();
       } else {
         throw new Error(
-          "Sorry we are having difficulty loading this page, please try again later!"
+          "Sorry we are having difficulty loading this picture, please try again later!"
         );
       }
     });
