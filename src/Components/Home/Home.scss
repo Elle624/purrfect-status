@@ -1,5 +1,5 @@
-@import "../../styles/variables";
-@import "../../styles/mixins";
+@import '../../styles/variables';
+@import '../../styles/mixins';
 
 .display-picture-form-section {
   display: flex;
@@ -8,8 +8,3 @@
   align-items: center;
   flex-wrap: wrap;
 }
-
-h1 {
-  font-size: 3rem;
-}
-

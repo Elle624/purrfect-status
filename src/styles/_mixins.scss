@@ -1,21 +1,42 @@
-@import "variables";
+@import 'variables';
 
 @mixin nav-button {
   border-radius: $round-corner;
+  background-color: $main-peach;
   font-size: 2em;
   width: 16rem;
   height: 4rem;
   outline: none;
+  font-family: 'Open Sans';
+  transition: all 0.4s;
 }
 
 @mixin smaller-button {
+  border-radius: $round-corner;
+  background-color: $main-blue;
   font-size: 1.5rem;
   width: 12rem;
   height: 2rem;
+  outline: none;
+  font-family: 'Open Sans';
+  color: $main-white;
+  transition: all 0.4s;
 }
 
-@mixin button-hover-effect {
+@mixin nav-button-hover-effect {
   cursor: pointer;
+  background-color: $main-blue;
+  color: $main-peach;
+  box-shadow: 2px 2px 3px 0px #000;
+  animation: swing 1s both;
+}
+
+@mixin smaller-button-hover-effect {
+  cursor: pointer;
+  background-color: $main-peach;
+  color: $main-blue;
+  box-shadow: 2px 2px 3px 0px #000;
+  animation: shake 0.6s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
 }
 
 @mixin input-settings {

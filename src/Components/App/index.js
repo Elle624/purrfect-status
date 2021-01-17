@@ -6,6 +6,7 @@ import Picture from '../Picture';
 import Form from '../Form';
 import Pawtraits from '../Pawtraits';
 import './App.scss';
+import rotateCatIcon from '../../Assets/cat-rotate-icon.ico';
 
 function App() {
   const [userInput, setUserInput] = useState(null);
@@ -38,7 +39,14 @@ function App() {
   return (
     <main className='main-body'>
       <nav className='nav-section'>
-        <h1>Purrfect Status</h1>
+        <h1>
+          Purrfect Status
+          <img
+            className='rotate-cat-icon'
+            src={rotateCatIcon}
+            alt='rotate-cat-icon'
+          />
+        </h1>
         <Link to={viewFavorire ? '/' : '/saved-pawtraits'}>
           <button onClick={() => setViewFavorite((prevStatus) => !prevStatus)}>
             {viewFavorire ? 'Return Home' : 'Saved Pawtraits'}

@@ -1,5 +1,5 @@
-@import "../../styles/variables";
-@import "../../styles/mixins";
+@import '../../styles/variables';
+@import '../../styles/mixins';
 
 .picture-section {
   display: flex;
@@ -11,7 +11,7 @@
     @include nav-button;
     @include smaller-button;
     &:hover {
-      @include button-hover-effect;
+      @include smaller-button-hover-effect;
     }
   }
 }
@@ -21,7 +21,7 @@
   flex-direction: column;
   justify-content: space-between;
   width: 40rem;
-  height: 25rem; 
+  height: 25rem;
   margin-bottom: 1rem;
   border-radius: 5%;
 }
@@ -29,7 +29,7 @@
 .dispay-inputs-wrapper {
   width: 100%;
   margin: 0;
-  background-color: $main-white; 
+  background-color: $main-white;
   opacity: 0.7;
   display: flex;
   justify-content: space-evenly;
