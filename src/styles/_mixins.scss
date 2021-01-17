@@ -1,4 +1,4 @@
-@import "variables";
+@import 'variables';
 
 @mixin nav-button {
   border-radius: $round-corner;
@@ -6,12 +6,14 @@
   width: 16rem;
   height: 4rem;
   outline: none;
+  font-family: 'Open Sans';
 }
 
 @mixin smaller-button {
   font-size: 1.5rem;
   width: 12rem;
   height: 2rem;
+  font-family: 'Open Sans';
 }
 
 @mixin button-hover-effect {
