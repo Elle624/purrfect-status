@@ -2,7 +2,11 @@ import React from 'react';
 
 const Pawtraits = ({ savedPawtraits }) => {
   const pawtraits = savedPawtraits.map((pawtrait) => (
-    <section className='picture-section' key={pawtrait.id}>
+    <section
+      className='picture-section'
+      key={pawtrait.id}
+      data-testid='saved-pawtrait'
+    >
       <div
         className='cat-picture-wrapper'
         data-testid='background-cat-picture'

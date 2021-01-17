@@ -17,11 +17,11 @@ const Picture = ({ setUserInput, userInput }) => {
   };
 
   const saveFavoriteCatPicture = () => {
-    setUserInput((prevInput) => ({
-      ...prevInput,
-      isFavorite: !prevInput.isFavorite,
+    setUserInput({
+      ...userInput,
+      isFavorite: !userInput.isFavorite,
       url: pictureUrl
-    }));
+    });
   };
 
   useEffect(() => generateRandomCatPicture(), []);
@@ -44,14 +44,15 @@ const Picture = ({ setUserInput, userInput }) => {
           {userInput && (
             <IoPawSharp
               className='icon'
+              data-testid='paw-icon'
               onClick={() => saveFavoriteCatPicture(userInput)}
               style={{ color: userInput.isFavorite ? '#177fcc' : 'white' }}
             />
           )}
         </div>
         <figure className='dispay-inputs-wrapper'>
-          <p>{userInput && userInput.statusCode}</p>
-          <p>{userInput && userInput.explaination}</p>
+          <p data-testid='user-inputs'>{userInput && userInput.statusCode}</p>
+          <p data-testid='user-inputs'>{userInput && userInput.explaination}</p>
         </figure>
       </div>
       <div>
