@@ -25,7 +25,9 @@ const Form = ({ getUserInput }) => {
   return (
     <form className='form-section' data-testid='form-section'>
       <div className='input-wrapper'>
-        <label htmlFor='status-code-input'>Status Code</label>
+        <label htmlFor='status-code-input' className='status-code-label'>
+          Status Code
+        </label>
         <input
           id='status-code-input'
           name='status-code'
@@ -37,7 +39,10 @@ const Form = ({ getUserInput }) => {
         ></input>
       </div>
       <div className='input-wrapper explaination-input-wrapper'>
-        <label htmlFor='explaination-input'>
+        <label
+          htmlFor='explaination-input'
+          className='status-explaination-label'
+        >
           What does {statusCode || 'it'} represents?
         </label>
         <textarea

@@ -15,7 +15,6 @@
     font-size: 3rem;
     font-family: 'Permanent Marker', cursive;
     animation: stretch 1.5s ease-out 0s alternate none running;
-    //animation: stretch 1.5s ease-out 0s alternate infinite none running;
   }
   button {
     @include nav-button;
