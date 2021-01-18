@@ -1,6 +1,6 @@
 # Purrfect Status (Solo Project)
 
-[Deploy Site](/)
+[Deploy Site](https://purrfect-status.vercel.app)
 
 ## Description
 
