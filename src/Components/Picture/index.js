@@ -7,12 +7,16 @@ import PropTypes from 'prop-types';
 const Picture = ({ setUserInput, userInput }) => {
   const [pictureUrl, setPictureUrl] = useState('');
   const [error, setError] = useState('');
+  let isMounted = false;
 
   const generateRandomCatPicture = () => {
+    isMounted = true;
     getCatPicture()
       .then((data) => {
-        setPictureUrl(data[0].url);
-        setUserInput(null);
+        if (isMounted) {
+          setPictureUrl(data[0].url);
+          setUserInput(null);
+        }
       })
       .catch((err) => setError(err.message));
   };
@@ -25,7 +29,10 @@ const Picture = ({ setUserInput, userInput }) => {
     });
   };
 
-  useEffect(() => generateRandomCatPicture(), []);
+  useEffect(() => {
+    generateRandomCatPicture();
+    return () => (isMounted = false);
+  }, []);
 
   return (
     <section className='picture-section' data-testid='picture-section'>
