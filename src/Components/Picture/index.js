@@ -67,5 +67,5 @@ export default Picture;
 
 Picture.propTypes = {
   setUserInput: PropTypes.func.isRequired,
-  userInput: PropTypes.object.isRequired
+  userInput: PropTypes.object
 };
