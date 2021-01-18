@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import './Form.scss';
 
 const Form = ({ getUserInput }) => {
@@ -63,3 +64,7 @@ const Form = ({ getUserInput }) => {
 };
 
 export default Form;
+
+Form.propTypes = {
+  getUserInput: PropTypes.func.isRequired
+};

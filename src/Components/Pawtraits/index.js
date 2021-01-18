@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Pawtraits = ({ savedPawtraits }) => {
   const pawtraits = savedPawtraits.map((pawtrait) => (
@@ -30,3 +31,11 @@ const Pawtraits = ({ savedPawtraits }) => {
 };
 
 export default Pawtraits;
+
+Pawtraits.propTypes = {
+  savedPawtraits: PropTypes.array.isRequired
+};
+
+Pawtraits.defaultProps = {
+  savedPawtraits: []
+};

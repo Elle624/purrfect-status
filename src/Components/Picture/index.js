@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { getCatPicture } from '../../apiCalls';
 import './Picture.scss';
 import { IoPawSharp } from 'react-icons/io5';
+import PropTypes from 'prop-types';
 
 const Picture = ({ setUserInput, userInput }) => {
   const [pictureUrl, setPictureUrl] = useState('');
@@ -63,3 +64,8 @@ const Picture = ({ setUserInput, userInput }) => {
 };
 
 export default Picture;
+
+Picture.propTypes = {
+  setUserInput: PropTypes.func.isRequired,
+  userInput: PropTypes.object.isRequired
+};
